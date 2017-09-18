@@ -50,7 +50,7 @@ def krippendorff_alpha(data, metric=interval_metric, force_vecmath=False, conver
     m = len(data)
     
     # set of constants identifying missing values
-    maskitems = list(missing_items)
+    maskitems = list(missing_items) if missing_items else []
     if np is not None:
         maskitems.append(np.ma.masked_singleton)
     
